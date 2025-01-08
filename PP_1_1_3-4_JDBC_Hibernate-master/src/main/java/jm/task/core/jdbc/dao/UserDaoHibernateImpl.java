@@ -44,7 +44,7 @@ public class UserDaoHibernateImpl implements UserDao {
             e.printStackTrace();
         }
     }
-    String d;
+
 
     @Override
     public void removeUserById(long id) {

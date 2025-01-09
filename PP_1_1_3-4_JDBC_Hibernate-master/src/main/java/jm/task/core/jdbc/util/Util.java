@@ -10,24 +10,24 @@ import java.sql.SQLException;
 
 public class Util {
     // JDBC параметры
-    private final String URL = "jdbc:mysql://localhost:3306/user_db";
-    private final String USERNAME = "user";
-    private final String PASSWORD = "Arthur010279+";
+    private final static String URL = "jdbc:mysql://localhost:3306/user_db";
+    private final static String USERNAME = "user";
+    private final static String PASSWORD = "Arthur010279+";
 
     // Hibernate SessionFactory
     private static SessionFactory sessionFactory;
 
     // Метод для получения SessionFactory Hibernate
     public static SessionFactory getSessionFactory() {
+
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration();
                 configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
                 configuration.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
-                configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/user_db");
-                configuration.setProperty("hibernate.connection.username", "user");
-                configuration.setProperty("hibernate.connection.password", "Arthur010279+");
-                configuration.setProperty("hibernate.hbm2ddl.auto", "update");
+                configuration.setProperty("hibernate.connection.url",URL);
+                configuration.setProperty("hibernate.connection.username", USERNAME);
+                configuration.setProperty("hibernate.connection.password", PASSWORD);
                 configuration.setProperty("hibernate.show_sql", "true");
 
                 // Создание SessionFactory

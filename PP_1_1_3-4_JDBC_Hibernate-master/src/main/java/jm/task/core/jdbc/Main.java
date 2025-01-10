@@ -1,7 +1,11 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,16 +13,17 @@ public class Main {
         UserService userService = new UserServiceImpl();
         userService.createUsersTable();
 
-        userService.saveUser("Sasha", "Smirnov", (byte) 13);
-        userService.saveUser("Ivan", "Stalin", (byte) 31);
-        userService.saveUser("Nikita", "Ponomaryev", (byte) 39);
-        userService.saveUser("Natasha", "Tumanova", (byte) 20);
-
-        userService.removeUserById(2);
-        userService.getAllUsers();
+            User user1 = new User("ivan", "ivanov", (byte) 30);
+            userService.saveUser(user1.getName(),user1.getLastName(),user1.getAge());
+            User user2 = new User("petr", "skiba",(byte) 40);
+            userService.saveUser(user2.getName(),user2.getLastName(),user2.getAge());
+            List<User> users = new ArrayList<>(userService.getAllUsers());
+            for (User user : users) {
+                System.out.println(user);
+            }
 
         userService.cleanUsersTable();
-
-        userService.dropUsersTable();
+        userService.getAllUsers();
     }
 }
+

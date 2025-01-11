@@ -17,15 +17,16 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="28ece3d1-6134-4738-bd79-69c8b8f7e89e">
-      <console name="Connection" type="STANDARD" schema="user_db" session="Main"><![CDATA[use user_db;
-select * from users;]]></console>
+      <console name="Connection" type="STANDARD" schema="user_db" session="Main"><![CDATA[drop user_db:]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="28ece3d1-6134-4738-bd79-69c8b8f7e89e" object-ref="consoles/Connection" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="28ece3d1-6134-4738-bd79-69c8b8f7e89e" />
@@ -36,6 +37,9 @@ select * from users;]]></console>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>

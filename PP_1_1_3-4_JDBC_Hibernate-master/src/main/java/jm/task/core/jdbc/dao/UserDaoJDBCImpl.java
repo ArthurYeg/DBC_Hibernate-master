@@ -67,8 +67,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 user.setLastName(resultSet.getString("last_name"));
                 user.setAge(resultSet.getByte("age"));
                 users.add(user);
-                StringBuilder sb = new StringBuilder("User с именем — ").append(user.getName()).append("  добавлен в базу данных");
-                System.out.println(sb);
+
             }
         } catch (SQLException e) {
             System.out.println("Problem with loading users");
